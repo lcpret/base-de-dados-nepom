@@ -20,13 +20,13 @@
     <p><strong>Hora: </strong><%=@occurrence.time%></p>
     <p><strong>Latitude: </strong><%=@occurrence.latitude%>°</p>
     <p><strong>Longitude: </strong><%=@occurrence.longitude%>°</p>
-    <%if @occurrence.ship_origin.size > 0 || !@occurrence.ship_origin.nil?  %>
+    <%if @occurrence.ship_origin.size > 0 %>
       <p><strong>Origem: </strong><%=@occurrence.ship_origin%></p>
     <% end %>
-    <%if @occurrence.ship_destination.size > 0 || !@occurrence.ship_destination.nil? %>
+    <%if @occurrence.ship_destination.size > 0 %>
       <p><strong>Destino: </strong><%=@occurrence.ship_destination%></p>
     <% end %>
-    <%if @occurrence.description.size > 0 || !@occurrence.description.nil? %>
+    <%if @occurrence.description.size > 0 %>
       <p><strong>Descrição: </strong><%=@occurrence.description%></p>
     <%end%>
   </div>
