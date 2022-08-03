@@ -23,6 +23,14 @@ class OccurrencesController < ApplicationController
 
   def show
     @occurrence = Occurrence.find(params[:id])
+    @markers = [
+        {
+          lat: @occurrence.latitude,
+          lng: @occurrence.longitude,
+          info_window: "<div class='text-dark'><strong>Lat:</strong> #{@occurrence.latitude} <strong class='text-primary'>-</strong> <strong>Long:</strong> #{@occurrence.longitude}
+                        </div>"
+        }
+      ]
   end
 
   def new

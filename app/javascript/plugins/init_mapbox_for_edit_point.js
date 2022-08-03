@@ -34,7 +34,7 @@ function buildMapNewPoint() {
       container: 'map-new-point',
       style: "mapbox://styles/mapbox/satellite-v9",
       center: coords,
-      zoom: 6
+      zoom: 7
     });
 
     var el = document.createElement('div');
