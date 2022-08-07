@@ -14,8 +14,10 @@
 
   </div>
   <div class="form-login text-left p-4 text-dark">
-    <p><strong>Registro: </strong><%=@ship.registration%> </p>
-    <p><strong>Porto de Registro: </strong><%=@ship.registration_port%></p>
+    <p><strong>Registro: </strong><%= @ship.registration %></p>
+    <p><strong>Porto de Registro: </strong><%= @ship.registration_port %></p>
+    <p><strong>Tipo: </strong><%= @ship.ship_type %></p>
+    <p><strong>Uso: </strong><%= @ship.application %></p>
   </div>
   </div>
 </div>

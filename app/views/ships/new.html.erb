@@ -6,6 +6,8 @@
       <%= f.input :name, required: true, label: "Nome" %>
       <%= f.input :registration, label: "Registro" %>
       <%= f.input :registration_port, label: "Porto de registro" %>
+      <%= f.input :ship_type, label: "Tipo de embarcação", prompt: "Selecione o tipo", collection: ["Escuna", "Jetski", "Lancha", "Miúdo", "Navio", "Pesqueiro", "Rebocador", "Veleiro", "Outros"], required: true  %>
+      <%= f.input :application, label: "Uso", prompt: "Selecione o uso", collection: ["Lazer", "Mercante", "Pesca", "Serviço", "Outros"], required: true  %>
       <%= f.input :photo, as: :file, label: "Foto" %>
       <%= f.button :submit, "Incluir", class: "btn btn-primary text-center mr-2" %>
       <%=link_to 'Voltar', :back, class: "btn btn-info text-center" %>

@@ -65,6 +65,6 @@ class ShipsController < ApplicationController
 private
 
   def ship_params
-    params.require(:ship).permit(:name, :registration, :registration_port, :photo)
+    params.require(:ship).permit(:name, :registration, :registration_port, :ship_type, :photo)
   end
 end
