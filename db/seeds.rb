@@ -22,12 +22,12 @@ USERS = [
   { name: 'Tati', email: 'tati@lewagon.com', password: '123456' }
 ]
 SHIPS = [
-  { name: 'Pinta', registration: '23456', registration_port: 'Hamburg' },
-  { name: 'Kontiki', registration: '23098', registration_port: 'Santos' },
-  { name: 'Calipso', registration: '45678', registration_port: 'Salvador' },
-  { name: 'Pequod', registration: '98765', registration_port: 'Nantucket' },
-  { name: 'Palestrante', registration: '34521', registration_port: 'Rio de Janeiro' },
-  { name: 'Revenge', registration: '76543', registration_port: 'Paranaguá' }
+  { name: 'Pinta', registration: '23456', registration_port: 'Hamburg', ship_type: 'Navio', application: 'Mercante' },
+  { name: 'Kontiki', registration: '23098', registration_port: 'Santos', ship_type: 'Escuna', application: 'Pesca' },
+  { name: 'Calipso', registration: '45678', registration_port: 'Salvador', ship_type: 'Pesqueiro', application: 'Lazer' },
+  { name: 'Pequod', registration: '98765', registration_port: 'Nantucket', ship_type: 'Navio', application: 'Mercante' },
+  { name: 'Palestrante', registration: '34521', registration_port: 'Rio de Janeiro', ship_type: 'Escuna', application: 'Pesca' },
+  { name: 'Revenge', registration: '76543', registration_port: 'Paranaguá', ship_type: 'Pesqueiro', application: 'Lazer' }
 ]
 COORDINATES = [
   { lat: -20.320733, long: -40.288746 },
@@ -84,8 +84,8 @@ puts ''
 puts 'Creating crews'
 ships.each do |ship|
   20.times do
-    date_ini = Faker::Date.between(from: '2019-01-01', to: '2021-11-09')
-    date_fin = Faker::Date.between(from: date_ini.to_s, to: '2021-11-09')
+    date_ini = Faker::Date.between(from: '2019-01-01', to: '2022-08-07')
+    date_fin = Faker::Date.between(from: date_ini.to_s, to: '2022-08-07')
     rand(5..10).times do
       Crew.create!(
         date_ini: date_ini,
@@ -103,7 +103,8 @@ puts 'Creating occurrences'
 50.times do
   coordinate = COORDINATES.sample
   Occurrence.create!(
-    date: Faker::Date.between(from: '2019-01-01', to: '2021-11-09'),
+    date: Faker::Date.between(from: '2019-01-01', to: '2022-08-07'),
+    time: '14:00:00',
     user: users.sample,
     ship: ships.sample,
     latitude: coordinate[:lat] + rand(-0.0009..0.0009),
