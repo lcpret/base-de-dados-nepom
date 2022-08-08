@@ -5,6 +5,15 @@
   <p><strong>Data:</strong> <%=occurrence.date %></p>
   <p><strong>Horário:</strong> <%=occurrence.time.to_s[11...19]%></p>
   <p><strong>Embarcação:</strong> <%= link_to Ship.where(id: occurrence.ship_id).first.name, ship_path(occurrence.ship_id)%></p>
+<<<<<<< HEAD
+  <% if occurrence.ship_origin%>
+    <p><strong>Origem:</strong> <%=occurrence.ship_origin %></p>
+  <%end%>
+  <% if occurrence.ship_destination.size > 0%>
+    <p><strong>Destino:</strong> <%=occurrence.ship_destination %></p>
+  <%end%>
+=======
   <p><strong>Origem:</strong> <%=occurrence.ship_origin %></p>
   <p><strong>Destino:</strong> <%=occurrence.ship_destination %></p>
+>>>>>>> 96b66b6fb8a561b4ae15a914362fca6d9f5ca273
 </div>
